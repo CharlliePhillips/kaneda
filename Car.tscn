@@ -1,19 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://test road.png" type="Texture" id=1]
-[ext_resource path="res://test dot.png" type="Texture" id=2]
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=3]
-[ext_resource path="res://test dot.gd" type="Script" id=4]
 [ext_resource path="res://right lane.gd" type="Script" id=5]
 [ext_resource path="res://wallClosed.png" type="Texture" id=6]
 [ext_resource path="res://Wall.gd" type="Script" id=7]
 [ext_resource path="res://wallOpen.png" type="Texture" id=8]
+[ext_resource path="res://CarInstance.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 79.9719 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -41,88 +36,35 @@ shape = SubResource( 1 )
 
 [node name="Cars" type="Node" parent="."]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Cars"]
-position = Vector2( 592, 464 )
-script = ExtResource( 3 )
+[node name="Car" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 592.581, 417.279 )
 
-[node name="test dot" type="Sprite" parent="Cars/KinematicBody2D"]
-texture = ExtResource( 2 )
-script = ExtResource( 4 )
+[node name="Car2" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 592.581, 454.736 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cars/KinematicBody2D"]
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 2 )
+[node name="Car3" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 592.581, 498.936 )
 
-[node name="KinematicBody2D3" type="KinematicBody2D" parent="Cars"]
-position = Vector2( 592, 512 )
-script = ExtResource( 3 )
+[node name="Car4" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 531.15, 498.936 )
 
-[node name="test dot" type="Sprite" parent="Cars/KinematicBody2D3"]
-texture = ExtResource( 2 )
-script = ExtResource( 4 )
+[node name="Car5" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 530.401, 453.238 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cars/KinematicBody2D3"]
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 2 )
+[node name="Car6" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 528.903, 405.292 )
 
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="Cars"]
-position = Vector2( 528, 512 )
-script = ExtResource( 3 )
-
-[node name="test dot" type="Sprite" parent="Cars/KinematicBody2D2"]
-texture = ExtResource( 2 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cars/KinematicBody2D2"]
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 2 )
-
-[node name="KinematicBody2D4" type="KinematicBody2D" parent="Cars"]
-position = Vector2( 528, 464 )
-script = ExtResource( 3 )
-
-[node name="test dot" type="Sprite" parent="Cars/KinematicBody2D4"]
-texture = ExtResource( 2 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cars/KinematicBody2D4"]
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 2 )
-
-[node name="KinematicBody2D5" type="KinematicBody2D" parent="Cars"]
-position = Vector2( 528, 416 )
-script = ExtResource( 3 )
-
-[node name="test dot" type="Sprite" parent="Cars/KinematicBody2D5"]
-texture = ExtResource( 2 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cars/KinematicBody2D5"]
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 2 )
-
-[node name="KinematicBody2D6" type="KinematicBody2D" parent="Cars"]
-position = Vector2( 592, 416 )
-script = ExtResource( 3 )
-
-[node name="test dot" type="Sprite" parent="Cars/KinematicBody2D6"]
-texture = ExtResource( 2 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cars/KinematicBody2D6"]
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 2 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Gate" type="StaticBody2D" parent="."]
 position = Vector2( 592.946, 386.231 )
+collision_mask = 0
 script = ExtResource( 7 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="StaticBody2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gate"]
 position = Vector2( -0.442444, -0.147705 )
 frames = SubResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 position = Vector2( -0.498474, 0.318298 )
 shape = SubResource( 4 )
-[connection signal="body_entered" from="rightLane" to="Cars/KinematicBody2D" method="_on_rightLane_body_entered"]
-[connection signal="body_exited" from="rightLane" to="Cars/KinematicBody2D" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="rightLane" to="Cars/Car" method="_on_rightLane_body_entered"]
+[connection signal="body_exited" from="rightLane" to="Cars/Car" method="_on_rightLane_body_exited"]

@@ -31,10 +31,18 @@ func _process(delta):
 	pass
 
 
-func _on_Area2D_body_exited(body):
+func _on_rightLane_body_exited(body):
 	if(body is KinematicBody2D):
 		body.laneOut = true
+		print(lane)
+		print(laneOut)
 	pass # Replace with function body.
 	
 	
+	pass # Replace with function body.
+
+
+func _on_Area2D_body_entered(body):
+	if(body != self):
+		queue_free()
 	pass # Replace with function body.
