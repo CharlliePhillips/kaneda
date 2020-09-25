@@ -80,6 +80,10 @@ position = Vector2( 524.23, 409.09 )
 position = Vector2( 700.18, 285.154 )
 rotation = -1.5708
 
+[node name="Car8" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 698.496, 349.695 )
+rotation = -1.5708
+
 [node name="Gate" type="StaticBody2D" parent="."]
 position = Vector2( 592.946, 386.231 )
 collision_mask = 0
@@ -117,6 +121,20 @@ position = Vector2( -0.442444, -0.147705 )
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate3"]
+position = Vector2( -0.498474, 0.318298 )
+shape = SubResource( 3 )
+
+[node name="Gate4" type="StaticBody2D" parent="."]
+position = Vector2( 621.007, 351.435 )
+rotation = 1.5708
+collision_mask = 0
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gate4"]
+position = Vector2( -0.442444, -0.147705 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate4"]
 position = Vector2( -0.498474, 0.318298 )
 shape = SubResource( 3 )
 [connection signal="body_entered" from="rightLane" to="Cars/Car" method="_on_rightLane_body_entered"]
