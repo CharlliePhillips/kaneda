@@ -53,20 +53,18 @@ func _on_rightLane_body_exited(body):
 	
 	pass # Replace with function body.
 
-
+#if another car hits the sides of the car then destroy
 func _on_Area2D_body_entered(body):
 	if(body != self):
 		queue_free()
 	pass # Replace with function body.
 
-
+#detect if another car is close in front
 func _on_Eyeline_body_entered(body):
 	if body is KinematicBody2D && body != self:
 		see = true
 		#print("see ", body)
 	pass # Replace with function body.
-
-
 func _on_Eyeline_body_exited(body):
 	if body is KinematicBody2D && body != self:
 		see = false
