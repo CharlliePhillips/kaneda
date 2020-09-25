@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 79.9719 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
@@ -18,7 +18,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 15.1645, 2.57237 )
 
 [node name="Node" type="Node"]
@@ -38,6 +38,10 @@ shape = SubResource( 1 )
 
 [node name="Car" parent="Cars" instance=ExtResource( 9 )]
 position = Vector2( 592.581, 417.279 )
+
+[node name="Car7" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 398.956, 352.457 )
+rotation = 1.5708
 
 [node name="Car2" parent="Cars" instance=ExtResource( 9 )]
 position = Vector2( 592.581, 454.736 )
@@ -61,10 +65,10 @@ script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gate"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="rightLane" to="Cars/Car" method="_on_rightLane_body_entered"]
 [connection signal="body_exited" from="rightLane" to="Cars/Car" method="_on_rightLane_body_exited"]
