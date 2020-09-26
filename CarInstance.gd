@@ -36,6 +36,10 @@ func _process(delta):
 			print(initRot)
 			set_rotation_degrees(get_rotation_degrees() + rotSpeed)
 			print(get_rotation_degrees())
+		if(lane == "left" && laneOut == true && get_rotation_degrees() < initRot - 90):
+			print(initRot)
+			set_rotation_degrees(get_rotation_degrees() + rotSpeed)
+			print(get_rotation_degrees())
 		speed.y = speedXY * -cos(get_rotation())
 		speed.x = speedXY * sin(get_rotation())
 	move_and_slide(speed)
@@ -69,4 +73,19 @@ func _on_Eyeline_body_exited(body):
 	if body is KinematicBody2D && body != self:
 		see = false
 		#print("no see ", body)
+	pass # Replace with function body.
+
+
+func _on_leftLane_body_entered(body):
+	if(body is KinematicBody2D):
+		body.lane = "left"
+	pass # Replace with function body.
+
+
+func _on_leftLane_body_exited(body):
+	print('exit')
+	if body is KinematicBody2D:
+		body.laneOut = true
+		print(lane)
+		print(body, laneOut)
 	pass # Replace with function body.

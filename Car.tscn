@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://test road.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -11,7 +11,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 79.9719 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 75.8415, 20.4794 )
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
@@ -19,7 +22,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 15.1645, 2.57237 )
 
 [node name="Node" type="Node"]
@@ -56,6 +59,12 @@ position = Vector2( 0.163269, 0.281219 )
 scale = Vector2( 0.752923, 2.52569 )
 texture = ExtResource( 2 )
 
+[node name="leftLane" type="Area2D" parent="rightLane2"]
+position = Vector2( 172.298, 173.981 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightLane2/leftLane"]
+shape = SubResource( 2 )
+
 [node name="Cars" type="Node" parent="."]
 
 [node name="Car" parent="Cars" instance=ExtResource( 9 )]
@@ -91,11 +100,11 @@ script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gate"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Gate2" type="StaticBody2D" parent="."]
 position = Vector2( 524.476, 385.67 )
@@ -104,11 +113,11 @@ script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gate2"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate2"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Gate3" type="StaticBody2D" parent="."]
 position = Vector2( 622.691, 285.771 )
@@ -118,11 +127,11 @@ script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gate3"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate3"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Gate4" type="StaticBody2D" parent="."]
 position = Vector2( 621.007, 351.435 )
@@ -132,12 +141,14 @@ script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gate4"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate4"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="rightLane" to="Cars/Car" method="_on_rightLane_body_entered"]
 [connection signal="body_exited" from="rightLane" to="Cars/Car" method="_on_rightLane_body_exited"]
 [connection signal="body_entered" from="rightLane2" to="Cars/Car" method="_on_rightLane_body_entered"]
 [connection signal="body_exited" from="rightLane2" to="Cars/Car" method="_on_rightLane_body_exited"]
+[connection signal="body_entered" from="rightLane2/leftLane" to="Cars/Car" method="_on_leftLane_body_entered"]
+[connection signal="body_exited" from="rightLane2/leftLane" to="Cars/Car" method="_on_leftLane_body_exited"]
