@@ -19,6 +19,10 @@ config/name="Traffic Game (FBLA 2020)"
 run/main_scene="res://Car.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
