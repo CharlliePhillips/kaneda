@@ -12,6 +12,7 @@ onready var selector1 = $CenterContainer/VBoxContainer/quit/quit/selector
 var enable = false
 
 var currentPos = 0
+var timeOut = false
 
 func _ready():
 	setSelection(0)
@@ -37,6 +38,10 @@ func _process(delta):
 		$CenterContainer/VBoxContainer/maintitle/maintitle.text = "game over!"
 		$CenterContainer/VBoxContainer/subtitle/subtitile.text = "you lost all your lives :("
 		$CenterContainer/VBoxContainer/retryMain/retryMain/retrymain.text = "main menu"
+	
+	if (timeOut == true):
+		$CenterContainer/VBoxContainer/maintitle/maintitle.text = "Out of time!"
+		
 	
 	#sets the selector after the new current pause value is chosen
 	setSelection(currentPos)
@@ -65,3 +70,10 @@ func setSelection(_currentPos):
 func exitOnEsc():
 	if Input.is_action_just_pressed("ui_quit"):
 		get_tree().quit()
+
+
+func _on_Timer_time():
+	timeOut = true
+	enable = true
+	visible = true
+	pass # Replace with function body.

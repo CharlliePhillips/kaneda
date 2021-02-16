@@ -1,7 +1,7 @@
 extends Timer
 
 # Declare member variables here. Examples:
-var base_time = 90
+var base_time = 20
 var waiter
 var vics
 onready var timer = get_node("/root/Level1/Timer")
@@ -15,9 +15,9 @@ func _ready():
 
 func _process(delta):
 	vics = get_parent().vicCount
-	if (vics == 20):
+	if (vics == get_parent().carsInLevel):
 		win()
-	if timer.get_time_left() == 0 && vics != 20:
+	if timer.get_time_left() == 0 && vics != get_parent().carsInLevel:
 		print("timeout")
 		emit_signal("time")
 	pass
@@ -25,5 +25,6 @@ func _process(delta):
 func win():
 	waiter = timer.get_time_left()
 	timer.stop()
+	print("timer stopped")
 	emit_signal("win", waiter)
 	pass # Replace with function body.

@@ -1,5 +1,7 @@
 extends MarginContainer
 
+var lifechanged = false
+
 func _ready():
 	lifechange()
 
@@ -13,19 +15,19 @@ func lifechange():
 		$CenterContainer/VBoxContainer/CenterContainer.visible = true
 		$CenterContainer/VBoxContainer/HBoxContainer/heart1.text = "<3"
 		$CenterContainer/VBoxContainer/HBoxContainer/heart2.text = "<3"
-		$CenterContainer/VBoxContainer/HBoxContainer/heart3.visible = false
+		$CenterContainer/VBoxContainer/HBoxContainer/heart3.text = ""
 	if (global.lives == 1):
 		$CenterContainer/VBoxContainer/CenterContainer.visible = true
 		$CenterContainer/VBoxContainer/HBoxContainer/heart1.text = "<3"
-		$CenterContainer/VBoxContainer/HBoxContainer/heart2.visible = false
-		$CenterContainer/VBoxContainer/HBoxContainer/heart3.visible = false
+		$CenterContainer/VBoxContainer/HBoxContainer/heart2.text = ""
+		$CenterContainer/VBoxContainer/HBoxContainer/heart3.text = ""
 	if (global.lives == 0):
 		$CenterContainer/VBoxContainer/HBoxContainer/heart1.text = "Game over :("
 		$CenterContainer/VBoxContainer/CenterContainer.visible = false
 
 func _on_Timer_time():
-	global.lives = 1
-	lifechange()
-	global.lives = 0
-	lifechange()
+	if (lifechanged == false):
+		global.lives -= 1
+		lifechange()
+		lifechanged = true
 	pass # Replace with function body.

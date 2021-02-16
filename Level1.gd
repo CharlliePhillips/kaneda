@@ -1,7 +1,7 @@
 extends Node
 
 #have to manualy count the cars in the level an set this variable to that number
-var carsInLevel = 20
+var carsInLevel = 9
 var score = 0
 var vicCount = 0
 
@@ -15,7 +15,7 @@ func exitOnEsc():
 
 func victory():
 	#print(vicCount)
-	if(vicCount == 20):
+	if(vicCount == carsInLevel):
 		#calculate score based on timer 
 		#print("victory")
 		$VictoryScreen1.enable = true

@@ -10,10 +10,11 @@ var fric = 0
 var laneOut = false
 var lane = "straight"
 var go = true
-var rotSpeed = 5
+var rotSpeed = 2
 var see = false
 var initRot = get_rotation_degrees()
 var timer = 0
+var leftTime = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initRot = get_rotation_degrees()
@@ -27,7 +28,6 @@ func _on_rightLane_body_entered(body):
 func _on_leftLane_body_entered(body):
 	if(body is KinematicBody2D):
 		body.lane = "left"
-		#print(body.lane)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,12 +40,13 @@ func _process(delta):
 		if(see == true && speedXY > 0):
 			speedXY -= accel
 		if(lane == "right" && laneOut == true && get_rotation_degrees() < initRot + 90):
-			print(initRot)
+			#print(initRot)
+			#print(get_rotation_degrees())
 			set_rotation_degrees(get_rotation_degrees() + rotSpeed)
-		if(lane == "left"  && laneOut == true && get_rotation_degrees() > initRot - 89 && timer >= 130):
-			print(initRot)
+		if(lane == "left"  && laneOut == true && get_rotation_degrees() > initRot - 90 && leftTime == true):
+			#print(initRot)
 			set_rotation_degrees(get_rotation_degrees() - rotSpeed)
-			print(get_rotation_degrees())
+			#print(get_rotation_degrees())
 		speed.y = speedXY * -cos(get_rotation())
 		speed.x = speedXY * sin(get_rotation())
 	move_and_slide(speed)
@@ -63,8 +64,6 @@ func _on_leftLane_body_exited(body):
 	#print('exit')
 	if body is KinematicBody2D:
 		body.laneOut = true
-		#print(body.lane)
-		#print(body, body.laneOut)
 	pass # Replace with function body.
 
 #if another car hits the sides of the car then destroy
@@ -98,3 +97,8 @@ func _on_Victory_Lane_body_entered(body):
 	if body is KinematicBody2D:
 		get_parent().get_parent().vicCount += 1
 	pass # Replace with function body.
+
+
+func _on_leftturn_body_entered(body):
+	body.leftTime = true
+	#print(leftTime)
