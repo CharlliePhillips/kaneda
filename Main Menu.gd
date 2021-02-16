@@ -15,6 +15,11 @@ func _ready():
 	global.lives = 3
 
 func _process(delta):
+	if (Input.is_action_just_pressed("test_1")):
+		global.level = 4
+		global.playername = $CenterContainer/VBoxContainer/nameenter/LineEdit.text
+		global.score = 200
+		get_tree().change_scene("res://Leaderboard.tscn")
 	#moves the selector around
 	if Input.is_action_just_pressed("ui_down"):
 		currentPos += 1
@@ -36,6 +41,7 @@ func _process(delta):
 #handles what happens when an option is selected
 func handleSelection(_currentPos):
 	if (_currentPos == 0):
+		global.playername = $CenterContainer/VBoxContainer/nameenter/LineEdit.text
 		get_tree().change_scene("res://Level1.tscn")
 		queue_free()
 	elif(_currentPos == 1):
