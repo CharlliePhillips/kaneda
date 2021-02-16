@@ -32,8 +32,6 @@ func _on_leftLane_body_entered(body):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(lane == "left"  && laneOut == true):
-		timer = timer + 1
 	if(go == true):
 		if(abs(speedXY) < maxSpeed && see != true && see == false):
 			speedXY += accel
@@ -44,7 +42,7 @@ func _process(delta):
 			#print(get_rotation_degrees())
 			set_rotation_degrees(get_rotation_degrees() + rotSpeed)
 		if(lane == "left"  && laneOut == true && get_rotation_degrees() > initRot - 90 && leftTime == true):
-			#print(initRot)
+			#print("init ", initRot)
 			set_rotation_degrees(get_rotation_degrees() - rotSpeed)
 			#print(get_rotation_degrees())
 		speed.y = speedXY * -cos(get_rotation())

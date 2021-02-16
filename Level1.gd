@@ -1,11 +1,15 @@
 extends Node
 
 #have to manualy count the cars in the level an set this variable to that number
-var carsInLevel = 9
+var carsInLevel = global.carsInLevel
+var level = global.level
 var score = 0
 var vicCount = 0
 
 func _process(delta):
+	print(carsInLevel)
+	print(level)
+	carsInLevel = global.carsInLevel
 	exitOnEsc()
 	victory()
 

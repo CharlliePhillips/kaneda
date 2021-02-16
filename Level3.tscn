@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Level1.png" type="Texture" id=1]
+[ext_resource path="res://Level3.png" type="Texture" id=1]
 [ext_resource path="res://NESCyrillic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Level1.gd" type="Script" id=3]
 [ext_resource path="res://mainfont.tres" type="DynamicFont" id=4]
@@ -20,12 +20,12 @@ extents = Vector2( 24, 79.9719 )
 extents = Vector2( 78.338, 20.4794 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 61.6245 )
+extents = Vector2( 10, 79.5121 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 3.25269, 36.3978 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7.62323, 36.3978 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
@@ -33,14 +33,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 15.1645, 2.57237 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 36
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 36
@@ -49,7 +43,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 48
+size = 36
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
@@ -66,6 +60,12 @@ outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
 [node name="Level1" type="Node"]
 script = ExtResource( 3 )
 
@@ -77,7 +77,16 @@ texture = ExtResource( 1 )
 [node name="rightLane" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="rightLane"]
-position = Vector2( 569.996, 80.7358 )
+position = Vector2( 354.996, 51.7358 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="rightLane"]
+position = Vector2( 649.996, 560.736 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="rightLane"]
+position = Vector2( 767.516, 167.143 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="leftLane" type="Area2D" parent="."]
@@ -85,11 +94,11 @@ position = Vector2( 525.341, 458.284 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftLane"]
-position = Vector2( 24.6424, -44.1365 )
+position = Vector2( 103.544, -31.8934 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="leftLane"]
-position = Vector2( -109.271, 120.188 )
+position = Vector2( -110.631, 290.235 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
@@ -97,69 +106,125 @@ shape = SubResource( 2 )
 position = Vector2( 383.991, 232.517 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Victory Lane"]
-position = Vector2( 90.258, -8.21759 )
+position = Vector2( -89.3113, -19.1006 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Victory Lane"]
-position = Vector2( 347.275, 180.322 )
+position = Vector2( 20.7852, 259.224 )
 rotation = 1.5708
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Victory Lane"]
-position = Vector2( 343.064, -76.4435 )
-rotation = 1.5708
+position = Vector2( 363.47, 160.262 )
 shape = SubResource( 3 )
 
 [node name="leftturn" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftturn"]
-position = Vector2( 692.697, 343.029 )
-shape = SubResource( 11 )
+position = Vector2( 529.875, 341.4 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="leftturn"]
-position = Vector2( 572, 260.277 )
+position = Vector2( 566.119, 277.184 )
 rotation = 1.5708
-shape = SubResource( 11 )
+shape = SubResource( 4 )
 
 [node name="Cars" type="Node" parent="."]
 
 [node name="Car" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 569.089, 442.21 )
-
-[node name="Car2" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 569.356, 499.775 )
+position = Vector2( 557.916, 544.167 )
 
 [node name="Car3" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 569.022, 560.926 )
+position = Vector2( 557.916, 504.362 )
+
+[node name="Car4" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 652.916, 502.362 )
+
+[node name="Car5" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 651.916, 538.362 )
+
+[node name="Car6" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 652.916, 578.362 )
+
+[node name="Car2" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 557.484, 582.877 )
 
 [node name="Car11" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 571.222, 18.4178 )
+position = Vector2( 357.222, 23.4178 )
 rotation = -3.14159
 
 [node name="Car12" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 571.222, 64.0829 )
+position = Vector2( 356.222, 63.0829 )
 rotation = -3.14159
 
 [node name="Car13" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 570.331, 114.838 )
+position = Vector2( 356.331, 103.838 )
+rotation = -3.14159
+
+[node name="Car14" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 452.73, 108.27 )
+rotation = -3.14159
+
+[node name="Car15" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 452.73, 68.3809 )
+rotation = -3.14159
+
+[node name="Car16" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 452.73, 24.0596 )
 rotation = -3.14159
 
 [node name="Car17" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 378.85, 352.352 )
+position = Vector2( 254.874, 348.307 )
 rotation = 1.5708
 
 [node name="Car18" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 317.85, 347.352 )
+position = Vector2( 221.853, 348.05 )
 rotation = 1.5708
 
 [node name="Car20" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 436.85, 348.352 )
+position = Vector2( 291.807, 347.69 )
 rotation = 1.5708
+
+[node name="Car27" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 290.699, 438.549 )
+rotation = 1.5708
+
+[node name="Car28" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 254.134, 438.549 )
+rotation = 1.5708
+
+[node name="Car29" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 217.569, 438.549 )
+rotation = 1.5708
+
+[node name="Car21" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 715.507, 166.24 )
+rotation = -1.5708
+
+[node name="Car24" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 713.507, 249.24 )
+rotation = -1.5708
+
+[node name="Car25" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 752.507, 248.24 )
+rotation = -1.5708
+
+[node name="Car26" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 789.507, 248.24 )
+rotation = -1.5708
+
+[node name="Car22" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 751.607, 165.29 )
+rotation = -1.5708
+
+[node name="Car23" parent="Cars" instance=ExtResource( 9 )]
+position = Vector2( 790.557, 165.29 )
+rotation = -1.5708
 
 [node name="Gates" type="Node" parent="."]
 
 [node name="Gate" type="StaticBody2D" parent="Gates"]
-position = Vector2( 570.283, 402.266 )
+position = Vector2( 557.713, 480.48 )
 collision_mask = 0
 script = ExtResource( 7 )
 __meta__ = {
@@ -168,14 +233,14 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Gate7" type="StaticBody2D" parent="Gates"]
-position = Vector2( 486.163, 350.034 )
+position = Vector2( 314.372, 348.637 )
 rotation = 1.5708
 collision_mask = 0
 script = ExtResource( 7 )
@@ -185,14 +250,31 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate7"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate7"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
+
+[node name="Gate11" type="StaticBody2D" parent="Gates"]
+position = Vector2( 313.264, 437.28 )
+rotation = 1.5708
+collision_mask = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate11"]
+position = Vector2( -0.442444, -0.147705 )
+frames = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate11"]
+position = Vector2( -0.498474, 0.318298 )
+shape = SubResource( 6 )
 
 [node name="Gate5" type="StaticBody2D" parent="Gates"]
-position = Vector2( 569.086, 161.416 )
+position = Vector2( 357.086, 130.416 )
 collision_mask = 0
 script = ExtResource( 7 )
 __meta__ = {
@@ -201,11 +283,77 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate5"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate5"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
+
+[node name="Gate10" type="StaticBody2D" parent="Gates"]
+position = Vector2( 453.485, 131.524 )
+collision_mask = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate10"]
+position = Vector2( -0.442444, -0.147705 )
+frames = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate10"]
+position = Vector2( -0.498474, 0.318298 )
+shape = SubResource( 6 )
+
+[node name="Gate6" type="StaticBody2D" parent="Gates"]
+position = Vector2( 686.12, 167.248 )
+rotation = 1.5708
+collision_mask = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate6"]
+position = Vector2( -0.442444, -0.147705 )
+frames = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate6"]
+position = Vector2( -0.498474, 0.318298 )
+shape = SubResource( 6 )
+
+[node name="Gate8" type="StaticBody2D" parent="Gates"]
+position = Vector2( 685.12, 250.248 )
+rotation = 1.5708
+collision_mask = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate8"]
+position = Vector2( -0.442444, -0.147705 )
+frames = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate8"]
+position = Vector2( -0.498474, 0.318298 )
+shape = SubResource( 6 )
+
+[node name="Gate9" type="StaticBody2D" parent="Gates"]
+position = Vector2( 652.12, 479.248 )
+collision_mask = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate9"]
+position = Vector2( -0.442444, -0.147705 )
+frames = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate9"]
+position = Vector2( -0.498474, 0.318298 )
+shape = SubResource( 6 )
 
 [node name="VictoryScreen1" type="MarginContainer" parent="."]
 visible = false
@@ -263,7 +411,7 @@ margin_bottom = 27.0
 [node name="Label2" type="Label" parent="VictoryScreen1/CenterContainer/VBoxContainer/newPoints/HBoxContainer"]
 margin_right = 302.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Points you gained: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -273,7 +421,7 @@ __meta__ = {
 margin_left = 306.0
 margin_right = 358.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "null"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -292,7 +440,7 @@ margin_bottom = 27.0
 [node name="Label2" type="Label" parent="VictoryScreen1/CenterContainer/VBoxContainer/totalPoints/HBoxContainer"]
 margin_right = 205.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Total score: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -302,7 +450,7 @@ __meta__ = {
 margin_left = 209.0
 margin_right = 261.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "null"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -322,7 +470,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -332,7 +480,7 @@ __meta__ = {
 margin_left = 37.0
 margin_right = 265.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Next Level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -352,7 +500,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -363,7 +511,7 @@ margin_left = 37.0
 margin_right = 265.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 228, 0 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -429,14 +577,14 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "> "
 
 [node name="retrymain" type="Label" parent="LostLifeScreen/CenterContainer/VBoxContainer/retryMain/retryMain"]
 margin_left = 37.0
 margin_right = 151.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "Retry"
 
 [node name="quit" type="CenterContainer" parent="LostLifeScreen/CenterContainer/VBoxContainer"]
@@ -453,7 +601,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "> "
 
 [node name="Label2" type="Label" parent="LostLifeScreen/CenterContainer/VBoxContainer/quit/quit"]
@@ -461,7 +609,7 @@ margin_left = 37.0
 margin_right = 151.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 114, 0 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "Quit"
 
 [node name="Lives" type="MarginContainer" parent="."]
@@ -526,6 +674,6 @@ script = ExtResource( 12 )
 [connection signal="body_exited" from="leftLane" to="Cars/Car" method="_on_leftLane_body_exited"]
 [connection signal="body_entered" from="Victory Lane" to="Cars/Car" method="_on_Victory_Lane_body_entered"]
 [connection signal="body_entered" from="leftturn" to="Cars/Car" method="_on_leftturn_body_entered"]
-[connection signal="time" from="Timer" to="Lives" method="_on_Timer_time"]
 [connection signal="time" from="Timer" to="LostLifeScreen" method="_on_Timer_time"]
+[connection signal="time" from="Timer" to="Lives" method="_on_Timer_time"]
 [connection signal="win" from="Timer" to="." method="_on_Timer_win"]

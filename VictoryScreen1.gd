@@ -1,8 +1,5 @@
 extends MarginContainer
 
-#stores the string location for the next level
-const nextLevel = "res://TestScreen.tscn"
-
 #sets the variables to the node paths of the option's text
 onready var selector0 = $CenterContainer/VBoxContainer/NextLevel/HBoxContainer/selector
 onready var selector1 = $CenterContainer/VBoxContainer/Quit/HBoxContainer/selector
@@ -39,7 +36,8 @@ func _process(delta):
 #handles what happens when an option is selected
 func handleSelection(_currentPos):
 	if (_currentPos == 0 && enable == true):
-		get_tree().change_scene(nextLevel)
+		global.level += 1
+		get_tree().change_scene(global.nextLevel)
 		get_parent().queue_free()
 	elif(_currentPos == 1 && enable == true):
 		get_tree().quit()
