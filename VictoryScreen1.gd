@@ -15,6 +15,12 @@ func _ready():
 
 
 func _process(delta):
+	#print(get_parent().newScore)
+	#print(global.score)
+	if (enable  == true):
+		$CenterContainer/VBoxContainer/newPoints/HBoxContainer/newPoints.set_text(str(get_parent().newScore))
+		$CenterContainer/VBoxContainer/totalPoints/HBoxContainer/totalPoints.set_text(str(global.score))
+	
 	#moves the selector around
 	if Input.is_action_just_pressed("ui_down"):
 		currentPos += 1
@@ -38,7 +44,6 @@ func handleSelection(_currentPos):
 	if (_currentPos == 0 && enable == true):
 		global.level += 1
 		get_tree().change_scene(global.nextLevel)
-		get_parent().queue_free()
 	elif(_currentPos == 1 && enable == true):
 		get_tree().quit()
 

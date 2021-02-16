@@ -92,7 +92,7 @@ func _on_Eyeline_body_exited(body):
 #increses the variable counting how many cars have reached their destination in the level master node
 func _on_Victory_Lane_body_entered(body):
 	#print("counted")
-	if body is KinematicBody2D:
+	if body is KinematicBody2D && get_parent().get_parent().get_node("LostLifeScreen").timeOut == false:
 		get_parent().get_parent().vicCount += 1
 	pass # Replace with function body.
 

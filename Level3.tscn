@@ -114,6 +114,11 @@ position = Vector2( 20.7852, 259.224 )
 rotation = 1.5708
 shape = SubResource( 3 )
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Victory Lane"]
+position = Vector2( 215.799, -117.508 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Victory Lane"]
 position = Vector2( 363.47, 160.262 )
 shape = SubResource( 3 )
@@ -668,6 +673,43 @@ custom_fonts/font = ExtResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 script = ExtResource( 12 )
+
+[node name="Time" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -264.931
+margin_top = -2.21606
+margin_right = -0.930664
+margin_bottom = 62.7839
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Time"]
+margin_right = 264.0
+margin_bottom = 98.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Time/CenterContainer"]
+margin_right = 264.0
+margin_bottom = 98.0
+
+[node name="Label" type="Label" parent="Time/CenterContainer/VBoxContainer"]
+margin_right = 264.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 4 )
+text = "Time Left"
+
+[node name="CenterContainer" type="CenterContainer" parent="Time/CenterContainer/VBoxContainer"]
+margin_top = 51.0
+margin_right = 264.0
+margin_bottom = 98.0
+
+[node name="time" type="Label" parent="Time/CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_right = 164.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 4 )
+text = "00"
 [connection signal="body_entered" from="rightLane" to="Cars/Car" method="_on_rightLane_body_entered"]
 [connection signal="body_exited" from="rightLane" to="Cars/Car" method="_on_rightLane_body_exited"]
 [connection signal="body_entered" from="leftLane" to="Cars/Car" method="_on_leftLane_body_entered"]

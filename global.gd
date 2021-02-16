@@ -5,9 +5,10 @@ var level = 1
 var carsInLevel = 9
 var nextLevel = "res://Level1.tscn"
 var time = 20
+var score = 0
 
 func _physics_process(delta):
-	print("level: ", level)
+	#print("level: ", level)
 	#print("time: ", time)
 	#print("cars in: ", carsInLevel)
 	if(level == 1):

@@ -520,6 +520,43 @@ custom_fonts/font = ExtResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 script = ExtResource( 12 )
+
+[node name="Time" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -265.822
+margin_top = 1.36037
+margin_right = -1.82202
+margin_bottom = 99.3604
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Time"]
+margin_right = 264.0
+margin_bottom = 98.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Time/CenterContainer"]
+margin_right = 264.0
+margin_bottom = 98.0
+
+[node name="Label" type="Label" parent="Time/CenterContainer/VBoxContainer"]
+margin_right = 264.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 4 )
+text = "Time Left"
+
+[node name="CenterContainer" type="CenterContainer" parent="Time/CenterContainer/VBoxContainer"]
+margin_top = 51.0
+margin_right = 264.0
+margin_bottom = 98.0
+
+[node name="time" type="Label" parent="Time/CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_right = 164.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 4 )
+text = "20"
 [connection signal="body_entered" from="rightLane" to="Cars/Car" method="_on_rightLane_body_entered"]
 [connection signal="body_exited" from="rightLane" to="Cars/Car" method="_on_rightLane_body_exited"]
 [connection signal="body_entered" from="leftLane" to="Cars/Car" method="_on_leftLane_body_entered"]

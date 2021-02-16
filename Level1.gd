@@ -3,12 +3,11 @@ extends Node
 #have to manualy count the cars in the level an set this variable to that number
 var carsInLevel = global.carsInLevel
 var level = global.level
-var score = 0
+var newScore = 0
 var vicCount = 0
+var scoreupdated = false
 
 func _process(delta):
-	print(carsInLevel)
-	print(level)
 	carsInLevel = global.carsInLevel
 	exitOnEsc()
 	victory()
@@ -27,5 +26,8 @@ func victory():
 
 
 func _on_Timer_win(remain):
-	score = 5 * remain #Change as wanted
+	if(scoreupdated == false):
+		newScore = int(5 * remain * global.level) #Change as wanted
+		global.score += newScore
+		scoreupdated = true
 	pass # Replace with function body.
