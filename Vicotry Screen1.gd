@@ -6,6 +6,7 @@ const level1 = preload("res://TestScreen.tscn")
 #sets the variables to the node paths of the option's text
 onready var selector0 = $CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Play/HBoxContainer/Selector
 onready var selector1 = $CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Tutorial/HBoxContainer/Selector
+onready var selector2 = $CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Quit/HBoxContainer/Selector
 
 var currentPos = 0
 

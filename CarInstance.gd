@@ -49,7 +49,6 @@ func _process(delta):
 		speed.y = speedXY * -cos(get_rotation())
 		speed.x = speedXY * sin(get_rotation())
 	move_and_slide(speed)
-	print(global.lives)
 	pass
 
 func _on_rightLane_body_exited(body):
@@ -74,6 +73,7 @@ func _on_Area2D_body_entered(body):
 		queue_free()
 		if(get_parent().get_parent().get_node("LostLifeScreen").enable == false):
 			global.lives -= 1
+			print(global.lives)
 			get_parent().get_parent().get_node("Lives").lifechange()
 		get_parent().get_parent().get_node("LostLifeScreen").enable = true
 		get_parent().get_parent().get_node("LostLifeScreen").visible = true

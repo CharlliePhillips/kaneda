@@ -16,8 +16,12 @@ func exitOnEsc():
 func victory():
 	#print(vicCount)
 	if(vicCount == 20):
-		#stop the timer
 		#calculate score based on timer 
 		#print("victory")
 		$VictoryScreen1.enable = true
 		$VictoryScreen1.visible = true
+
+
+func _on_Timer_win(remain):
+	score = 5 * remain #Change as wanted
+	pass # Replace with function body.

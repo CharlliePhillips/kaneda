@@ -6,7 +6,7 @@ extends RigidBody2D
 # var b = "text"
 var top = 50
 var speed = 0
-var position = Vector2(5,5)
+var pos = Vector2(5,5)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
