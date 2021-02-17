@@ -1,13 +1,11 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Level1.png" type="Texture" id=1]
 [ext_resource path="res://NESCyrillic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Level1.gd" type="Script" id=3]
 [ext_resource path="res://mainfont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://VictoryScreen1.gd" type="Script" id=5]
-[ext_resource path="res://wallClosed.png" type="Texture" id=6]
 [ext_resource path="res://Wall.gd" type="Script" id=7]
-[ext_resource path="res://wallOpen.png" type="Texture" id=8]
 [ext_resource path="res://CarInstance.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Lives.gd" type="Script" id=10]
 [ext_resource path="res://LostLifeScreen.gd" type="Script" id=11]
@@ -22,45 +20,25 @@ extents = Vector2( 78.338, 20.4794 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 61.6245 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 3.25269, 36.3978 )
+[sub_resource type="DynamicFont" id=4]
+size = 36
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="DynamicFont" id=5]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 15.1645, 2.57237 )
+[sub_resource type="DynamicFont" id=6]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 36
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 36
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 48
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 48
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=11]
 size = 48
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
@@ -114,12 +92,10 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftturn"]
 position = Vector2( 692.697, 343.029 )
-shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="leftturn"]
 position = Vector2( 572, 260.277 )
 rotation = 1.5708
-shape = SubResource( 4 )
 
 [node name="Cars" type="Node" parent="."]
 
@@ -168,11 +144,9 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 6 )
 
 [node name="Gate7" type="StaticBody2D" parent="Gates"]
 position = Vector2( 486.163, 350.034 )
@@ -185,11 +159,9 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate7"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate7"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 6 )
 
 [node name="Gate5" type="StaticBody2D" parent="Gates"]
 position = Vector2( 569.086, 161.416 )
@@ -201,11 +173,9 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gates/Gate5"]
 position = Vector2( -0.442444, -0.147705 )
-frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate5"]
 position = Vector2( -0.498474, 0.318298 )
-shape = SubResource( 6 )
 
 [node name="VictoryScreen1" type="MarginContainer" parent="."]
 visible = false
@@ -233,9 +203,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen1/CenterContainer"]
 margin_left = 284.0
-margin_top = 206.0
+margin_top = 198.0
 margin_right = 740.0
-margin_bottom = 393.0
+margin_bottom = 401.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -256,14 +226,14 @@ margin_right = 456.0
 margin_bottom = 78.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VictoryScreen1/CenterContainer/VBoxContainer/newPoints"]
-margin_left = 39.0
-margin_right = 417.0
-margin_bottom = 27.0
+margin_left = 27.0
+margin_right = 429.0
+margin_bottom = 35.0
 
 [node name="Label2" type="Label" parent="VictoryScreen1/CenterContainer/VBoxContainer/newPoints/HBoxContainer"]
 margin_right = 302.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 text = "Points you gained: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -273,7 +243,7 @@ __meta__ = {
 margin_left = 306.0
 margin_right = 358.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 5 )
 text = "null"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -285,14 +255,14 @@ margin_right = 456.0
 margin_bottom = 109.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VictoryScreen1/CenterContainer/VBoxContainer/totalPoints"]
-margin_left = 87.0
-margin_right = 368.0
-margin_bottom = 27.0
+margin_left = 75.0
+margin_right = 380.0
+margin_bottom = 35.0
 
 [node name="Label2" type="Label" parent="VictoryScreen1/CenterContainer/VBoxContainer/totalPoints/HBoxContainer"]
 margin_right = 205.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 text = "Total score: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -302,7 +272,7 @@ __meta__ = {
 margin_left = 209.0
 margin_right = 261.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 5 )
 text = "null"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -322,7 +292,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -332,7 +302,7 @@ __meta__ = {
 margin_left = 37.0
 margin_right = 265.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "Next Level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -352,7 +322,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -363,7 +333,7 @@ margin_left = 37.0
 margin_right = 265.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 228, 0 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -421,22 +391,21 @@ margin_right = 600.0
 margin_bottom = 137.0
 
 [node name="retryMain" type="HBoxContainer" parent="LostLifeScreen/CenterContainer/VBoxContainer/retryMain"]
-margin_left = 224.0
-margin_right = 375.0
+margin_left = 265.0
+margin_right = 335.0
 margin_bottom = 35.0
 
 [node name="selector" type="Label" parent="LostLifeScreen/CenterContainer/VBoxContainer/retryMain/retryMain"]
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 7 )
 text = "> "
 
 [node name="retrymain" type="Label" parent="LostLifeScreen/CenterContainer/VBoxContainer/retryMain/retryMain"]
 margin_left = 37.0
 margin_right = 151.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 11 )
 text = "Retry"
 
 [node name="quit" type="CenterContainer" parent="LostLifeScreen/CenterContainer/VBoxContainer"]
@@ -453,7 +422,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 7 )
 text = "> "
 
 [node name="Label2" type="Label" parent="LostLifeScreen/CenterContainer/VBoxContainer/quit/quit"]
@@ -461,7 +430,6 @@ margin_left = 37.0
 margin_right = 151.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 114, 0 )
-custom_fonts/font = SubResource( 11 )
 text = "Quit"
 
 [node name="Lives" type="MarginContainer" parent="."]

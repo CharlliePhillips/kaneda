@@ -593,6 +593,6 @@ text = "00"
 [connection signal="body_exited" from="leftLane" to="Cars/Car" method="_on_leftLane_body_exited"]
 [connection signal="body_entered" from="Victory Lane" to="Cars/Car" method="_on_Victory_Lane_body_entered"]
 [connection signal="body_entered" from="leftturn" to="Cars/Car" method="_on_leftturn_body_entered"]
-[connection signal="time" from="Timer" to="LostLifeScreen" method="_on_Timer_time"]
 [connection signal="time" from="Timer" to="Lives" method="_on_Timer_time"]
+[connection signal="time" from="Timer" to="LostLifeScreen" method="_on_Timer_time"]
 [connection signal="win" from="Timer" to="." method="_on_Timer_win"]
