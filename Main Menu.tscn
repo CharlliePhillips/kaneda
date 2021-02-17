@@ -4,13 +4,13 @@
 [ext_resource path="res://NESCyrillic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://mainfont.tres" type="DynamicFont" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 36
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 48
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
@@ -59,7 +59,7 @@ margin_left = 215.0
 margin_right = 465.0
 margin_bottom = 37.0
 rect_min_size = Vector2( 250, 37 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Enter Name"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -84,7 +84,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = ">"
 
 [node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Play/HBoxContainer"]
@@ -92,7 +92,7 @@ margin_left = 37.0
 margin_right = 277.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 240, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Play"
 
 [node name="Tutorial" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VboxOpt"]
@@ -108,14 +108,14 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = ">"
 
 [node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Tutorial/HBoxContainer"]
 margin_left = 37.0
 margin_right = 277.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "How to Play"
 
 [node name="Quit" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VboxOpt"]
@@ -131,7 +131,7 @@ margin_bottom = 35.0
 margin_right = 33.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 33, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = ">"
 
 [node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Quit/HBoxContainer"]
@@ -139,5 +139,5 @@ margin_left = 37.0
 margin_right = 277.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 240, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Quit"
