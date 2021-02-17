@@ -27,6 +27,11 @@ global="*res://global.gd"
 
 settings/fps/force_fps=60
 
+[global]
+
+filter=false
+"gen mimpmaps"=false
+
 [input]
 
 ui_up={

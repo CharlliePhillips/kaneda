@@ -137,65 +137,43 @@ shape = SubResource( 4 )
 [node name="Cars" type="Node" parent="."]
 
 [node name="Car" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 557.916, 544.167 )
-
-[node name="Car3" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 557.916, 504.362 )
+position = Vector2( 558.546, 521.478 )
 
 [node name="Car4" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 652.916, 502.362 )
-
-[node name="Car5" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 651.916, 538.362 )
+position = Vector2( 651.656, 518.749 )
 
 [node name="Car6" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 652.916, 578.362 )
+position = Vector2( 652.286, 584.034 )
 
 [node name="Car2" parent="Cars" instance=ExtResource( 9 )]
 position = Vector2( 557.484, 582.877 )
 
-[node name="Car11" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 357.222, 23.4178 )
-rotation = -3.14159
-
 [node name="Car12" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 356.222, 63.0829 )
+position = Vector2( 356.791, 35.2117 )
 rotation = -3.14159
 
 [node name="Car13" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 356.331, 103.838 )
+position = Vector2( 355.843, 99.4489 )
 rotation = -3.14159
 
 [node name="Car14" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 452.73, 108.27 )
+position = Vector2( 452.423, 103.045 )
 rotation = -3.14159
 
 [node name="Car15" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 452.73, 68.3809 )
-rotation = -3.14159
-
-[node name="Car16" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 452.73, 24.0596 )
+position = Vector2( 453.868, 38.8033 )
 rotation = -3.14159
 
 [node name="Car17" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 254.874, 348.307 )
-rotation = 1.5708
-
-[node name="Car18" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 221.853, 348.05 )
+position = Vector2( 210.487, 347.821 )
 rotation = 1.5708
 
 [node name="Car20" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 291.807, 347.69 )
+position = Vector2( 281.931, 347.69 )
 rotation = 1.5708
 
 [node name="Car27" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 290.699, 438.549 )
-rotation = 1.5708
-
-[node name="Car28" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 254.134, 438.549 )
+position = Vector2( 277.727, 438.086 )
 rotation = 1.5708
 
 [node name="Car29" parent="Cars" instance=ExtResource( 9 )]
@@ -203,23 +181,15 @@ position = Vector2( 217.569, 438.549 )
 rotation = 1.5708
 
 [node name="Car21" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 715.507, 166.24 )
+position = Vector2( 720.684, 165.593 )
 rotation = -1.5708
 
 [node name="Car24" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 713.507, 249.24 )
-rotation = -1.5708
-
-[node name="Car25" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 752.507, 248.24 )
+position = Vector2( 716.419, 249.887 )
 rotation = -1.5708
 
 [node name="Car26" parent="Cars" instance=ExtResource( 9 )]
 position = Vector2( 789.507, 248.24 )
-rotation = -1.5708
-
-[node name="Car22" parent="Cars" instance=ExtResource( 9 )]
-position = Vector2( 751.607, 165.29 )
 rotation = -1.5708
 
 [node name="Car23" parent="Cars" instance=ExtResource( 9 )]

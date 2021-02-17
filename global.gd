@@ -32,7 +32,7 @@ func _physics_process(delta):
 		nextLevel = "res://Level3.tscn"
 		time = 30
 	if(level == 3):
-		carsInLevel = 24
+		carsInLevel = 16
 		nextLevel = "res://Leaderboard.tscn"
 		time = 40
 	if(level == 4):
