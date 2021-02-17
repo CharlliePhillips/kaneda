@@ -2,7 +2,7 @@ extends MarginContainer
 
 #preloads level 1
 const level1 = preload("res://Level1.tscn")
-
+var timer = 0
 #sets the variables to the node paths of the option's text
 onready var selector0 = $CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Play/HBoxContainer/Selector
 onready var selector1 = $CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/Tutorial/HBoxContainer/Selector
@@ -11,10 +11,12 @@ onready var selector2 = $CenterContainer/VBoxContainer/CenterContainer2/VboxOpt/
 var currentPos = 0
 
 func _ready():
+	timer = 0
 	setSelection(0)
 	global.lives = 3
 
 func _process(delta):
+	timer += delta
 	if (Input.is_action_just_pressed("test_1")):
 		global.level = 4
 		global.playername = $CenterContainer/VBoxContainer/nameenter/LineEdit.text
@@ -31,7 +33,7 @@ func _process(delta):
 		currentPos = 0
 	
 	#starts the handle selection function wheen acceptted
-	if Input.is_action_just_pressed("ui_accept"):
+	if (Input.is_action_just_pressed("ui_accept") && timer > .5):
 		handleSelection(currentPos)
 	
 	#sets the selector after the new current pause value is chosen

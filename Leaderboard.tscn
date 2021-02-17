@@ -26,44 +26,203 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
-margin_left = 362.0
-margin_top = 225.0
-margin_right = 662.0
-margin_bottom = 374.0
+margin_left = 332.0
+margin_top = 149.0
+margin_right = 692.0
+margin_bottom = 451.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_right = 300.0
+margin_right = 360.0
 margin_bottom = 47.0
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 300.0
+margin_left = 30.0
+margin_right = 330.0
 margin_bottom = 47.0
 custom_fonts/font = ExtResource( 2 )
 text = "New Score!"
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+[node name="player1" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 51.0
-margin_right = 300.0
+margin_right = 360.0
 margin_bottom = 98.0
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 120.0
-margin_right = 180.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/player1"]
+margin_left = 2.0
+margin_right = 358.0
+margin_bottom = 47.0
+
+[node name="place" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player1/HBoxContainer"]
+margin_right = 60.0
 margin_bottom = 47.0
 custom_fonts/font = ExtResource( 2 )
 text = "1. "
 
-[node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+[node name="name" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player1/HBoxContainer"]
+margin_left = 64.0
+margin_right = 192.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "John"
+
+[node name="-" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player1/HBoxContainer"]
+margin_left = 196.0
+margin_right = 260.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = " - "
+
+[node name="score" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player1/HBoxContainer"]
+margin_left = 264.0
+margin_right = 356.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "100"
+
+[node name="new" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player1/HBoxContainer"]
+visible = false
+margin_left = 360.0
+margin_right = 520.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = " < new"
+
+[node name="player2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 102.0
-margin_right = 300.0
+margin_right = 360.0
 margin_bottom = 149.0
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer3"]
-margin_left = 120.0
-margin_right = 180.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/player2"]
+margin_right = 360.0
+margin_bottom = 47.0
+
+[node name="place" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player2/HBoxContainer"]
+margin_right = 64.0
 margin_bottom = 47.0
 custom_fonts/font = ExtResource( 2 )
-text = "1. "
+text = "2. "
+
+[node name="name" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player2/HBoxContainer"]
+margin_left = 68.0
+margin_right = 196.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "John"
+
+[node name="-" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player2/HBoxContainer"]
+margin_left = 200.0
+margin_right = 264.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = " - "
+
+[node name="score" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player2/HBoxContainer"]
+margin_left = 268.0
+margin_right = 360.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "100"
+
+[node name="new" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player2/HBoxContainer"]
+visible = false
+margin_left = 360.0
+margin_right = 520.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = " < new"
+
+[node name="player3" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 153.0
+margin_right = 360.0
+margin_bottom = 200.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/player3"]
+margin_right = 360.0
+margin_bottom = 47.0
+
+[node name="place" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player3/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "3. "
+
+[node name="name" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player3/HBoxContainer"]
+margin_left = 68.0
+margin_right = 196.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "John"
+
+[node name="-" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player3/HBoxContainer"]
+margin_left = 200.0
+margin_right = 264.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = " - "
+
+[node name="score" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player3/HBoxContainer"]
+margin_left = 268.0
+margin_right = 360.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "100"
+
+[node name="new" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/player3/HBoxContainer"]
+visible = false
+margin_left = 360.0
+margin_right = 520.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = " < new"
+
+[node name="mainmenu" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 360.0
+margin_bottom = 251.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/mainmenu"]
+margin_left = 20.0
+margin_right = 340.0
+margin_bottom = 47.0
+
+[node name="selector" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/mainmenu/HBoxContainer"]
+margin_right = 44.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 44, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "> "
+
+[node name="main menu" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/mainmenu/HBoxContainer"]
+margin_left = 48.0
+margin_right = 320.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "Main Menu"
+
+[node name="quit" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 255.0
+margin_right = 360.0
+margin_bottom = 302.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/quit"]
+margin_left = 20.0
+margin_right = 340.0
+margin_bottom = 47.0
+
+[node name="selector" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/quit/HBoxContainer"]
+margin_right = 44.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 44, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "> "
+
+[node name="quit" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/quit/HBoxContainer"]
+margin_left = 48.0
+margin_right = 320.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 272, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"

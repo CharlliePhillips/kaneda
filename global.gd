@@ -15,6 +15,8 @@ var player3 = "john"
 var score3 = 100
 var noscore = false
 var playername = ""
+var newscore = false
+var newplace = 0
 
 func _physics_process(delta):
 	#print("level: ", level)
@@ -35,14 +37,20 @@ func _physics_process(delta):
 		time = 40
 	if(level == 4):
 		gamecomplete = true
-	if(gamecomplete == true):
+	if(gamecomplete == true && newscore == false):
 		if (score > score1):
+			newplace = 1
+			newscore = true
 			score1 = score
 			player1 = playername
 		elif(score > score2):
+			newplace = 2
+			newscore = true
 			score2 = score
 			player2 = playername
 		elif(score > score3):
+			newplace = 3
+			newscore = true
 			score3 = score
 			player3 = playername
 		else:
