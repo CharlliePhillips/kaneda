@@ -47,8 +47,7 @@ func handleSelection(_currentPos):
 		get_tree().change_scene("res://Level1.tscn")
 		queue_free()
 	elif(_currentPos == 1):
-		get_tree().change_scene("res://Tutorial.tscn")
-		queue_free()
+		print("make the fuckin tutorial dumbass")
 	elif(_currentPos == 2):
 		get_tree().quit()
 
